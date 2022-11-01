@@ -18,11 +18,11 @@ function my_wpcf7_mail_sent($contact_form)
         $webhook_url = 'https://hooks.slack.com/services/XXXXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXX';
 
         // Slackに送信するメッセージ
-        $message = "お問い合わせがありました。\n\nお名前：" . $name . "\nメールアドレス：" . $email . "\n件名：" . $subject . "\nメッセージ：" . $message;
+        $slackmessage = "お問い合わせがありました。\n\nお名前：" . $name . "\nメールアドレス：" . $email . "\n件名：" . $subject . "\nメッセージ：" . $message;
 
         // Slackに送信するデータ
         $data = array(
-            'text' => $message,
+            'text' => $slackmessage,
         );
 
         // Slackに送信
