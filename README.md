@@ -4,7 +4,7 @@
 
 WordPress の Contact Form 7 を使用したフォームから送信されたメッセージを、Slack の任意のチャンネルに転送します。
 
-> **Notice**  
+> **Note**  
 > WordPress での実装方法は、直接担当者に訊いてください。
 
 ## Incoming Webhook の URL の取得方法
