@@ -1,9 +1,9 @@
 <?php
 function my_wpcf7_mail_sent($contact_form)
 {
-    if (!is_page('slack-form-test')) { // 実行したいページのスラグを指定
-        // このページで ReCAPTCHA をアクティベートするのを忘れないこと
-
+    $my_form_id = 9999; // 実行したいフォームのidを指定
+    // フォームがあるページで ReCAPTCHA をアクティベートするのを忘れないこと
+    if ($contact_form->id() == $my_form_id) {
         //送信された情報を取得
         $submission = WPCF7_Submission::get_instance();
         if ($submission) {
@@ -37,6 +37,8 @@ function my_wpcf7_mail_sent($contact_form)
         ));
         $result = curl_exec($curl);
         curl_close($curl);
+    } else {
+        return;
     }
 }
 add_action("wpcf7_mail_sent", "my_wpcf7_mail_sent");
